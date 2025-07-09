@@ -1,0 +1,82 @@
+
+<nav class="navbar navbar-light bg-primary">
+  <h3 style="color: white;">Curd-App</h3>
+  <div class="d-flex m-1">
+      <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="allbtn()">Add-New</button> &nbsp;
+      <button class="btn btn-danger" routerLink="/login">LogOut</button>
+  </div>
+</nav>
+
+<marquee behavior="" direction="">
+  <h3 style="color: rgb(27, 112, 27);">♦ User Record App ♠ </h3>
+</marquee>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="card">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Name</th>
+              <th scope="col">course</th>
+              <th scope="col">city</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let all of alldata">
+              <td>{{all.id}}</td>
+              <td>{{all.name}}</td>
+              <td>{{all.course}}</td>
+              <td>{{all.city}}</td>
+              <td>
+                  <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="updatedata(all)">Edit</button> &nbsp;
+                  <button class="btn btn-danger" (click)="deletedata(all.id)">Delete</button>
+              </td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Fill Data</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        
+        <form [formGroup]="userform">
+          <div class="mb-3">
+            <label class="form-label">Name</label>
+            <input type="text" placeholder="enten name" formControlName="name" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Course</label>
+            <input type="text" placeholder="enter course" formControlName="course" class="form-control">
+          </div> 
+          <div class="mb-3">
+            <label class="form-label">City</label>
+            <input type="text" placeholder="enter city" formControlName="city" class="form-control">
+          </div>
+        </form>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" *ngIf="addbtn" class="btn btn-primary" (click)="postdata()">Add</button>
+        <button *ngIf="upbtn" class="btn btn-dark" (click)="editdata()">Update</button>
+      </div>
+    </div>
+  </div>
+</div>
+

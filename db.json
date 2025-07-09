@@ -1,0 +1,24 @@
+{
+  "users": [
+    {
+      "name": "zeeshan",
+      "course": "Angular",
+      "city": "lahore",
+      "id": 1
+    },
+    {
+      "name": "zahid",
+      "course": "asp.net",
+      "city": "multan",
+      "id": 2
+    }
+  ],
+  "list": [
+    {
+      "email": "abc@gmail.com",
+      "password": "12345",
+      "mobile": 789456,
+      "id": 1
+    }
+  ]
+}

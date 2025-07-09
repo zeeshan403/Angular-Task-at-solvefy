@@ -1,0 +1,15 @@
+<div class="card">
+<form [formGroup]="loginform">
+    <div class="mb-3">
+      <label class="form-label">Email</label>
+      <input type="email" formControlName="email" class="form-control">
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Password</label>
+      <input type="password" formControlName="password" class="form-control">
+    </div>
+   <a routerLink="/sign">Not Account Fill To Sign</a>
+    <button type="submit" class="btn btn-primary" (click)="logindata()">Login</button>
+  </form>
+</div>
